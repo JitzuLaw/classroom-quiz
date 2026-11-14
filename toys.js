@@ -117,14 +117,14 @@
   ];
 
   // where each toy sits (scene is 1600 x 900)
-  const lineY = (x) => { const t = (x - 150) / 1300; return 200 + 120 * t * (1 - t); }; // clothesline sag
-  const HANG_S = 1.2;
-  const SHELF_S = 1.15;
+  const lineY = (x) => { const t = (x - 150) / 1300; return 130 + 120 * t * (1 - t); }; // clothesline sag
+  const HANG_S = 1.8;
+  const SHELF_S = 1.7;
   const PLACES = [
     ...[340, 570, 800, 1030, 1260].map(x => ({ x: x - 50 * HANG_S, y: lineY(x) - 8 * HANG_S, s: HANG_S, hang: true })),
     ...[
-      { cx: 345, y: 535 }, { cx: 235, y: 715 }, { cx: 455, y: 715 },
-      { cx: 1150, y: 610 }, { cx: 1360, y: 610 }
+      { cx: 190, y: 650 }, { cx: 385, y: 650 }, { cx: 580, y: 650 },
+      { cx: 1100, y: 650 }, { cx: 1330, y: 650 }
     ].map(p => ({ x: p.cx - 50 * SHELF_S, y: p.y - 123 * SHELF_S, s: SHELF_S, hang: false }))
   ];
 

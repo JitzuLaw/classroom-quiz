@@ -6,7 +6,6 @@ const storeView = $('storeView');
 const slotsLayer = $('slots');
 const btnBack = $('btnBack');
 const countNote = $('countNote');
-const boomSvg = $('boomSvg');
 const btnEditor = $('btnEditor');
 const btnQuiz = $('btnQuiz');
 const btnExit = $('btnExit');
@@ -484,34 +483,15 @@ function showView(name) {
   window.scrollTo(0, 0);
 }
 
-// the cartoon star behind "BOOGSHHH!"
-(function drawBurst() {
-  const star = (outer, inner) => {
-    const pts = [];
-    for (let i = 0; i < 32; i++) {
-      const r = i % 2 ? inner : outer;
-      const a = (Math.PI * 2 * i) / 32;
-      pts.push((Math.cos(a) * r).toFixed(1) + ',' + (Math.sin(a) * r).toFixed(1));
-    }
-    return pts.join(' ');
-  };
-  boomSvg.innerHTML =
-    '<polygon points="' + star(106, 74) + '" fill="#ffe680" stroke="#ffb703" stroke-width="5" stroke-linejoin="round"/>' +
-    '<polygon points="' + star(70, 48) + '" fill="#fff7c2" opacity=".9"/>';
-})();
-
 // teddy pop-up in the middle of the screen for 2 seconds
 function showReaction(good) {
   const bubble = good ? reactGood : reactBad;
   reactGood.classList.toggle('hidden', !good);
   reactBad.classList.toggle('hidden', good);
-  boomSvg.classList.toggle('hidden', !good);
   reaction.classList.remove('hidden');
   bubble.style.animation = 'none';
-  boomSvg.style.animation = 'none';
   void bubble.offsetWidth; // restart the pop animations
   bubble.style.animation = '';
-  boomSvg.style.animation = '';
   clearTimeout(reactTimer);
   reactTimer = setTimeout(() => reaction.classList.add('hidden'), 2000);
 }
