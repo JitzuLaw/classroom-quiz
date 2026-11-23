@@ -1,5 +1,5 @@
-// ===== TOY SHOP: the 10 stuffed toys and where they sit in the shop =====
-// Toys 1-5 hang from the clothesline, toys 6-10 sit on the shelves.
+// ===== TOY SHOP: the 5 stuffed toys and where they sit in the shop =====
+// All 5 toys hang from the clothesline.
 // (The shop itself - tent, curtains, shelves, shopkeeper, counter - is drawn in index.html.)
 (function () {
   const DARK = '#3b2a35';
@@ -118,15 +118,9 @@
 
   // where each toy sits (scene is 1600 x 900)
   const lineY = (x) => { const t = (x - 150) / 1300; return 130 + 120 * t * (1 - t); }; // clothesline sag
-  const HANG_S = 1.8;
-  const SHELF_S = 1.7;
-  const PLACES = [
-    ...[340, 570, 800, 1030, 1260].map(x => ({ x: x - 50 * HANG_S, y: lineY(x) - 8 * HANG_S, s: HANG_S, hang: true })),
-    ...[
-      { cx: 190, y: 650 }, { cx: 385, y: 650 }, { cx: 580, y: 650 },
-      { cx: 1100, y: 650 }, { cx: 1330, y: 650 }
-    ].map(p => ({ x: p.cx - 50 * SHELF_S, y: p.y - 123 * SHELF_S, s: SHELF_S, hang: false }))
-  ];
+  const HANG_S = 2.3;
+  const COUNT = 5;
+  const PLACES = [260, 530, 800, 1070, 1340].map(x => ({ x: x - 50 * HANG_S, y: lineY(x) - 8 * HANG_S, s: HANG_S, hang: true }));
 
   const PUFF_COLORS = ['#ff8fab', '#ffe08a', '#9bd0ff', '#caffbf'];
 
@@ -157,10 +151,10 @@
   }
 
   window.ToyShop = {
-    // draws the 10 toys into `layer` (an SVG <g>) and calls onPick(index 0-9) when one is clicked
+    // draws the 5 toys into `layer` (an SVG <g>) and calls onPick(index 0-9) when one is clicked
     build(layer, onPick) {
       let html = '';
-      for (let n = 1; n <= 10; n++) html += slotMarkup(n);
+      for (let n = 1; n <= COUNT; n++) html += slotMarkup(n);
       layer.innerHTML = html;
 
       layer.addEventListener('click', (e) => {
@@ -173,7 +167,7 @@
         if (t) { e.preventDefault(); onPick(Number(t.dataset.i)); }
       });
 
-      return Array.from({ length: 10 }, (_, i) => layer.querySelector('#slot' + (i + 1)));
+      return Array.from({ length: COUNT }, (_, i) => layer.querySelector('#slot' + (i + 1)));
     }
   };
 })();

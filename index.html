@@ -565,7 +565,7 @@
       <input type="file" id="importFile" accept=".json,application/json" class="hidden">
     </div>
     <p id="toolMsg" class="tool-msg" role="status"></p>
-    <p class="hint">The toy shop has 10 toys, so a quiz can have up to 10 questions. Question 1 is toy 1, question 2 is toy 2, and so on (use the arrows to change the order). Your questions are saved only in this browser, on this computer. Use "Save Quiz File" to keep a backup or to move a quiz to another computer.</p>
+    <p class="hint">The toy shop has 5 toys, so a quiz can have up to 5 questions. Question 1 is toy 1, question 2 is toy 2, and so on (use the arrows to change the order). Your questions are saved only in this browser, on this computer. Use "Save Quiz File" to keep a backup or to move a quiz to another computer.</p>
   </section>
 
 
@@ -653,10 +653,10 @@
       <rect x="540" y="820" width="520" height="66" rx="22" fill="#fff" stroke="#ffb3c6" stroke-width="5"/>
       <text x="800" y="854" text-anchor="middle" dominant-baseline="central" font-family="Fredoka, 'Comic Sans MS', sans-serif" font-weight="600" font-size="40" fill="#e0527f">Pick a toy!</text>
 
-      <!-- the 10 toys (drawn by toys.js) -->
+      <!-- the 5 toys (drawn by toys.js) -->
       <g id="slots"></g>
     </svg>
-    <p class="store-hint">Click a toy to answer its question. You can also press the toy's number on the keyboard (0 is toy 10).</p>
+    <p class="store-hint">Click a toy to answer its question. You can also press the toy's number (1-5) on the keyboard.</p>
   </section>
 
   <!-- QUIZ VIEW -->
@@ -670,7 +670,7 @@
     <button id="btnNext" class="hidden">Next</button>
     <div id="results" class="results hidden">
       <p id="resultStars" class="result-stars" aria-hidden="true"></p>
-      <p id="resultScore" class="result-score"></p><Wbr>  </Wbr>
+      <p id="resultScore" class="result-score"></p>
       <button id="btnAgain">Play Again</button>
     </div>
     <p class="hint">Tip: press A, B, C or D to answer (or T / F). Press Enter to go on. Esc goes back to the store.</p>

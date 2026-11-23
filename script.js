@@ -60,7 +60,7 @@ function saveQuestions() {
   }
 }
 
-const MAX_Q = 10; // the toy shop has 10 toys
+const MAX_Q = 5; // the toy shop has 5 toys
 
 function showToolMsg(text, isError) {
   toolMsg.textContent = text;
@@ -239,7 +239,7 @@ btnSave.addEventListener('click', () => {
   }
 
   if (editingIndex === null && questions.length >= MAX_Q) {
-    alert('The toy shop has 10 toys, so a quiz can have up to 10 questions. Delete or edit one instead.');
+    alert('The toy shop has 5 toys, so a quiz can have up to 5 questions. Delete or edit one instead.');
     return;
   }
 
@@ -350,7 +350,7 @@ const SAMPLE_QUIZ = [
 
 btnSample.addEventListener('click', () => {
   const room = MAX_Q - questions.length;
-  if (room <= 0) { showToolMsg('The toy shop is full (10 questions). Delete some first.', true); return; }
+  if (room <= 0) { showToolMsg('The toy shop is full (5 questions). Delete some first.', true); return; }
   const backup = JSON.stringify(questions);
   const add = JSON.parse(JSON.stringify(SAMPLE_QUIZ)).slice(0, room);
   questions = questions.concat(add);
@@ -428,7 +428,7 @@ importFile.addEventListener('change', () => {
     if (!valid.length) { showToolMsg('No valid questions were found in that file.', true); return; }
 
     const room = MAX_Q - questions.length;
-    if (room <= 0) { showToolMsg('The toy shop is full (10 questions). Delete some first.', true); return; }
+    if (room <= 0) { showToolMsg('The toy shop is full (5 questions). Delete some first.', true); return; }
     const good = valid.slice(0, room);
 
     const backup = JSON.stringify(questions);
@@ -441,7 +441,7 @@ importFile.addEventListener('change', () => {
     resetForm();
     renderList();
     const skipped = list.length - good.length;
-    showToolMsg('Added ' + good.length + ' question(s).' + (skipped ? ' Skipped ' + skipped + ' (not valid, or no room: the shop holds 10).' : ''));
+    showToolMsg('Added ' + good.length + ' question(s).' + (skipped ? ' Skipped ' + skipped + ' (not valid, or no room: the shop holds 5).' : ''));
   };
   reader.onerror = () => showToolMsg('That file could not be read.', true);
   reader.readAsText(file);
@@ -462,7 +462,7 @@ document.addEventListener('fullscreenchange', () => {
 if (!document.fullscreenEnabled) btnFull.classList.add('hidden');
 
 // ===== TOY SHOP + QUIZ =====
-const slots = ToyShop.build(slotsLayer, openToy); // the 10 toys, in number order
+const slots = ToyShop.build(slotsLayer, openToy); // the 5 toys, in number order
 let view = 'editor';      // 'editor', 'store' or 'quiz'
 let answered = new Set(); // toys (questions) that were answered right
 let current = 0;          // the toy that was picked
@@ -657,7 +657,7 @@ btnNext.addEventListener('click', () => {
 });
 
 // ===== KEYBOARD =====
-// shop: 1-9 and 0 pick a toy.  quiz: A-D (or 1-4) answer, T/F for true/false, Enter = go on.
+// shop: 1-5 pick a toy.  quiz: A-D (or 1-4) answer, T/F for true/false, Enter = go on.
 // Esc: quiz -> back to the shop; shop -> leave to the editor.
 document.addEventListener('keydown', (e) => {
   if (view === 'editor') return;
@@ -674,7 +674,7 @@ document.addEventListener('keydown', (e) => {
   }
 
   if (view === 'store') {
-    if (k.length === 1 && '0123456789'.includes(k)) openToy(k === '0' ? 9 : Number(k) - 1);
+    if (k.length === 1 && '12345'.includes(k)) openToy(Number(k) - 1);
     return;
   }
 
