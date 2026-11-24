@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ma'am Jenna's Carnival Quiz</title>
+  <title>Ma'am Jenna's Carnival Booth</title>
   <meta name="description" content="A cute carnival-themed quiz maker for elementary classrooms. Teachers build multiple choice and true/false quizzes; kids answer together on the big screen.">
   <meta name="theme-color" content="#ffb3c6">
-  <meta property="og:title" content="Ma'am Jenna's Carnival Quiz">
+  <meta property="og:title" content="Ma'am Jenna's Carnival Booth">
   <meta property="og:description" content="Build a multiple choice or true/false quiz, then play it with your class on the big screen.">
   <meta property="og:type" content="website">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%AA%3C/text%3E%3C/svg%3E">
@@ -506,7 +506,7 @@
   <!-- ================= APP ================= -->
 
   <header>
-    <h1>Ma'am Jenna's Carnival Quiz</h1>
+    <h1>Ma'am Jenna's Carnival Booth</h1>
     <nav>
       <button id="btnEditor">Edit Questions</button>
       <button id="btnQuiz">Start Quiz</button>
@@ -535,11 +535,11 @@
 
     <!-- Multiple choice inputs -->
     <div id="mcFields">
-      <p>Choices (select the correct one)</p>
+      <p>Choices (select the correct one). Fill in A to C, or A to D.</p>
       <div class="choice-row"><input type="radio" name="correct" value="0" checked><input type="text" class="mc-input" placeholder="Choice A"></div>
       <div class="choice-row"><input type="radio" name="correct" value="1"><input type="text" class="mc-input" placeholder="Choice B"></div>
       <div class="choice-row"><input type="radio" name="correct" value="2"><input type="text" class="mc-input" placeholder="Choice C"></div>
-      <div class="choice-row"><input type="radio" name="correct" value="3"><input type="text" class="mc-input" placeholder="Choice D"></div>
+      <div class="choice-row"><input type="radio" name="correct" value="3"><input type="text" class="mc-input" placeholder="Choice D (optional)"></div>
     </div>
 
     <!-- True/False input -->
@@ -652,6 +652,9 @@
       <rect y="804" width="1600" height="8" fill="#000" opacity=".12"/>
       <rect x="540" y="820" width="520" height="66" rx="22" fill="#fff" stroke="#ffb3c6" stroke-width="5"/>
       <text x="800" y="854" text-anchor="middle" dominant-baseline="central" font-family="Fredoka, 'Comic Sans MS', sans-serif" font-weight="600" font-size="40" fill="#e0527f">Pick a toy!</text>
+
+      <!-- shelf props: darts, cans, ring toss, balloons, popcorn, drum, trophy -->
+      <g id="props" aria-hidden="true" pointer-events="none"><rect x="150" y="644" width="60" height="6" rx="3" fill="#b9814a"/><rect x="170" y="626" width="20" height="20" fill="#c99d66"/><circle cx="180" cy="572" r="60" fill="#4a3b47"/><circle cx="180" cy="572" r="54" fill="#fff3b0"/><circle cx="180" cy="572" r="42" fill="#ff8fab"/><circle cx="180" cy="572" r="30" fill="#fff"/><circle cx="180" cy="572" r="18" fill="#7ec8ff"/><circle cx="180" cy="572" r="7" fill="#ff5c8a"/><g transform="translate(168 560) rotate(-20)"><path d="M0 0 L-2.5 -9 H2.5 Z" fill="#c9cfdc"/><rect x="-2.5" y="-24" width="5" height="15" rx="2" fill="#ff5c8a"/><path d="M0 -24 L-9 -38 L0 -32 L9 -38 Z" fill="#7ec8ff"/></g><g transform="translate(196 586) rotate(25)"><path d="M0 0 L-2.5 -9 H2.5 Z" fill="#c9cfdc"/><rect x="-2.5" y="-24" width="5" height="15" rx="2" fill="#ff5c8a"/><path d="M0 -24 L-9 -38 L0 -32 L9 -38 Z" fill="#7ec8ff"/></g><g transform="translate(182 572) rotate(5)"><path d="M0 0 L-2.5 -9 H2.5 Z" fill="#c9cfdc"/><rect x="-2.5" y="-24" width="5" height="15" rx="2" fill="#ff5c8a"/><path d="M0 -24 L-9 -38 L0 -32 L9 -38 Z" fill="#7ec8ff"/></g><rect x="290" y="606" width="40" height="44" rx="5" fill="#ff8fab"/><rect x="290" y="622" width="40" height="12" fill="#fff" opacity=".85"/><ellipse cx="310" cy="609" rx="20" ry="5" fill="#fff" opacity=".45"/><rect x="332" y="606" width="40" height="44" rx="5" fill="#a0c4ff"/><rect x="332" y="622" width="40" height="12" fill="#fff" opacity=".85"/><ellipse cx="352" cy="609" rx="20" ry="5" fill="#fff" opacity=".45"/><rect x="374" y="606" width="40" height="44" rx="5" fill="#ffe066"/><rect x="374" y="622" width="40" height="12" fill="#fff" opacity=".85"/><ellipse cx="394" cy="609" rx="20" ry="5" fill="#fff" opacity=".45"/><rect x="311" y="562" width="40" height="44" rx="5" fill="#a0c4ff"/><rect x="311" y="578" width="40" height="12" fill="#fff" opacity=".85"/><ellipse cx="331" cy="565" rx="20" ry="5" fill="#fff" opacity=".45"/><rect x="353" y="562" width="40" height="44" rx="5" fill="#ffe066"/><rect x="353" y="578" width="40" height="12" fill="#fff" opacity=".85"/><ellipse cx="373" cy="565" rx="20" ry="5" fill="#fff" opacity=".45"/><rect x="332" y="518" width="40" height="44" rx="5" fill="#ffe066"/><rect x="332" y="534" width="40" height="12" fill="#fff" opacity=".85"/><ellipse cx="352" cy="521" rx="20" ry="5" fill="#fff" opacity=".45"/><rect x="440" y="634" width="92" height="16" rx="6" fill="#e0a56a"/><rect x="481" y="556" width="10" height="82" rx="4" fill="#b9814a"/><ellipse cx="486" cy="626" rx="26" ry="7" fill="none" stroke="#ff8fab" stroke-width="6"/><ellipse cx="486" cy="608" rx="23" ry="6.5" fill="none" stroke="#7fa6f0" stroke-width="6"/><ellipse cx="486" cy="591" rx="20" ry="6" fill="none" stroke="#f0c94a" stroke-width="6"/><path d="M606 640 Q600 590 590 548 M606 640 Q612 580 626 534 M606 640 Q630 595 656 552" fill="none" stroke="#fff" stroke-width="1.6" opacity=".8"/><rect x="596" y="640" width="20" height="10" rx="3" fill="#8a6a3a"/><ellipse cx="590" cy="525" rx="20" ry="25" fill="#ff8fab"/><ellipse cx="583" cy="516" rx="5" ry="8" fill="#fff" opacity=".5"/><path d="M586 549 L594 549 L590 555 Z" fill="#ff8fab"/><ellipse cx="626" cy="510" rx="20" ry="25" fill="#a0c4ff"/><ellipse cx="619" cy="501" rx="5" ry="8" fill="#fff" opacity=".5"/><path d="M622 534 L630 534 L626 540 Z" fill="#a0c4ff"/><ellipse cx="656" cy="530" rx="20" ry="25" fill="#ffe066"/><ellipse cx="649" cy="521" rx="5" ry="8" fill="#fff" opacity=".5"/><path d="M652 554 L660 554 L656 560 Z" fill="#ffe066"/><path d="M1010 600 H1090 L1080 650 H1020 Z" fill="#fff"/><path d="M1010 600 H1020 L1027.5 650 H1020.0 Z" fill="#ff6b81"/><path d="M1030 600 H1040 L1042.5 650 H1035.0 Z" fill="#ff6b81"/><path d="M1050 600 H1060 L1057.5 650 H1050.0 Z" fill="#ff6b81"/><path d="M1070 600 H1080 L1072.5 650 H1065.0 Z" fill="#ff6b81"/><circle cx="1022" cy="596" r="10" fill="#fff6d6" stroke="#f0d9a0" stroke-width="2"/><circle cx="1040" cy="588" r="11" fill="#fff6d6" stroke="#f0d9a0" stroke-width="2"/><circle cx="1058" cy="584" r="11" fill="#fff6d6" stroke="#f0d9a0" stroke-width="2"/><circle cx="1076" cy="590" r="10" fill="#fff6d6" stroke="#f0d9a0" stroke-width="2"/><circle cx="1050" cy="574" r="9" fill="#fff6d6" stroke="#f0d9a0" stroke-width="2"/><circle cx="1032" cy="578" r="8" fill="#fff6d6" stroke="#f0d9a0" stroke-width="2"/><circle cx="1068" cy="576" r="8" fill="#fff6d6" stroke="#f0d9a0" stroke-width="2"/><rect x="1008" y="598" width="84" height="6" rx="3" fill="#ff6b81"/><g transform="translate(1190 616) rotate(-18)"><path d="M0 0 L-2.5 -9 H2.5 Z" fill="#c9cfdc"/><rect x="-2.5" y="-24" width="5" height="15" rx="2" fill="#ff5c8a"/><path d="M0 -24 L-9 -38 L0 -32 L9 -38 Z" fill="#7ec8ff"/></g><g transform="translate(1202 614) rotate(0)"><path d="M0 0 L-2.5 -9 H2.5 Z" fill="#c9cfdc"/><rect x="-2.5" y="-24" width="5" height="15" rx="2" fill="#ff5c8a"/><path d="M0 -24 L-9 -38 L0 -32 L9 -38 Z" fill="#7ec8ff"/></g><g transform="translate(1214 616) rotate(18)"><path d="M0 0 L-2.5 -9 H2.5 Z" fill="#c9cfdc"/><rect x="-2.5" y="-24" width="5" height="15" rx="2" fill="#ff5c8a"/><path d="M0 -24 L-9 -38 L0 -32 L9 -38 Z" fill="#7ec8ff"/></g><path d="M1178 612 H1226 L1220 650 H1184 Z" fill="#ffd966"/><rect x="1178" y="610" width="48" height="6" rx="3" fill="#f0c94a"/><rect x="1186" y="626" width="34" height="8" fill="#fff" opacity=".7"/><rect x="1270" y="602" width="80" height="48" rx="6" fill="#ff8fab"/><rect x="1270" y="618" width="80" height="9" fill="#ffe066"/><ellipse cx="1310" cy="602" rx="40" ry="10" fill="#ffe0ec" stroke="#ff8fab" stroke-width="3"/><path d="M1292 588 L1318 600 M1328 588 L1300 600" stroke="#c99d66" stroke-width="5" stroke-linecap="round"/><circle cx="1292" cy="588" r="5" fill="#b9814a"/><circle cx="1328" cy="588" r="5" fill="#b9814a"/><rect x="1384" y="636" width="32" height="14" rx="3" fill="#8a6a3a"/><rect x="1395" y="618" width="10" height="20" fill="#f0c94a"/><path d="M1380 570 Q1380 618 1400 622 Q1420 618 1420 570 Z" fill="#ffd93d"/><path d="M1380 578 Q1362 580 1368 596 Q1372 604 1384 604 M1420 578 Q1438 580 1432 596 Q1428 604 1416 604" fill="none" stroke="#f0c94a" stroke-width="5" stroke-linecap="round"/><path d="M1400 580 l4 9 10 1-8 6 3 10-9-6-9 6 3-10-8-6 10-1z" fill="#fff3b0"/></g>
 
       <!-- the 5 toys (drawn by toys.js) -->
       <g id="slots"></g>

@@ -229,9 +229,12 @@ btnSave.addEventListener('click', () => {
 
   let q;
   if (qType.value === 'mc') {
-    const choices = Array.from(mcInputs).map(i => i.value.trim());
-    if (choices.some(c => !c)) { alert('Please fill in all 4 choices.'); return; }
+    // choices A, B and C are required; D is optional (so a question has 3 or 4 choices)
+    const all = Array.from(mcInputs).map(i => i.value.trim());
+    if (!all[0] || !all[1] || !all[2]) { alert('Please fill in choices A, B and C. (Choice D is optional.)'); return; }
+    const choices = all[3] ? all : all.slice(0, 3);
     const answer = Number(document.querySelector('input[name="correct"]:checked').value);
+    if (answer >= choices.length) { alert('The correct answer is set to D, but choice D is empty. Pick A, B or C, or type choice D.'); return; }
     q = { type: 'mc', text, choices, answer, image: currentImage };
   } else {
     const isTrue = document.querySelector('input[name="tfCorrect"]:checked').value === 'True';
@@ -266,7 +269,7 @@ function startEdit(i) {
   qText.value = q.text;
   setImage(q.image);
   if (q.type === 'mc') {
-    mcInputs.forEach((inp, n) => inp.value = q.choices[n]);
+    mcInputs.forEach((inp, n) => inp.value = q.choices[n] || '');
     document.querySelector(`input[name="correct"][value="${q.answer}"]`).checked = true;
   } else {
     const val = q.answer === 0 ? 'True' : 'False';
@@ -398,10 +401,10 @@ function cleanQuestion(q) {
     return { type: 'tf', text, choices: ['True', 'False'], answer: q.answer, image };
   }
   if (q.type === 'mc') {
-    if (!Array.isArray(q.choices) || q.choices.length !== 4) return null;
+    if (!Array.isArray(q.choices) || q.choices.length < 3 || q.choices.length > 4) return null;
     const choices = q.choices.map(c => (typeof c === 'string' ? c.trim().slice(0, 200) : ''));
     if (choices.some(c => !c)) return null;
-    if (![0, 1, 2, 3].includes(q.answer)) return null;
+    if (!Number.isInteger(q.answer) || q.answer < 0 || q.answer >= choices.length) return null;
     return { type: 'mc', text, choices, answer: q.answer, image };
   }
   return null;
